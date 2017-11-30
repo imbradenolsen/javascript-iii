@@ -38,8 +38,16 @@ var employees = [{
 
 // Code here
 
-
-
+function employeeUpdater(){
+  for(var i = 0; i < employees.length; i++ ){
+    if(employees[i]['firstName'] === 'Theo'){
+      employees.splice(i,1)
+      i--
+    }else if(employees[i]['firstName'] === 'Lorie'){
+      employees[i]['department'] = 'HR'
+    }
+  }return employees
+}
 
 
 
@@ -55,7 +63,14 @@ var employees = [{
 var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 // Code here
-
+function removeDuplicates(workplaceAccidents){
+  for(var i = 0; i < workplaceAccidents.length; i++){
+    if(workplaceAccidents.indexOf(workplaceAccidents[i]) !== i){
+        workplaceAccidents.splice(i,1)
+        i--
+    }
+  } return workplaceAccidents
+}
 
 
 
@@ -84,8 +99,8 @@ var cat = {
 
 // Code here
 
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -123,7 +138,12 @@ var myCar = {
 }
 
 // Code here
-
+ let recordCleaner = () => {
+ var array = myCar.accidents
+ for(let i = 0; i < array.length; i++){
+   array[i].atFaultForAccident = false
+ }
+}
 
 
 
@@ -142,6 +162,7 @@ var myCar = {
 // 4. Return the modified numsArr.
 
 var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+
 
 
 
